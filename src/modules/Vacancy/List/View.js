@@ -1,4 +1,5 @@
 import React from 'react'
+import { navigate } from 'hookrouter';
 import { Card, Grid, Menu, Icon, Modal, Button, Form } from 'semantic-ui-react';
 import logo  from 'nkey.jpg'
 
@@ -7,6 +8,22 @@ export default ({ title = 'Loading', size }) => {
 
   const [open, setOpen] = React.useState(false)
 
+
+const addVacancy = () => {
+
+
+
+	console.log("added vacancy");
+	setOpen(false);
+
+}
+
+const goToDetail = () => {
+
+	navigate('detail', true);
+
+	console.log("detalhe");
+}
 
 
   return (<Grid columns={1} centered divided>
@@ -47,7 +64,7 @@ export default ({ title = 'Loading', size }) => {
           content="Salvar"
           labelPosition='right'
           icon='checkmark'
-          onClick={() => setOpen(false)}
+          onClick={() => addVacancy()}
           positive
         />
       </Modal.Actions>
@@ -85,6 +102,7 @@ export default ({ title = 'Loading', size }) => {
 				    image={logo}
 				    header='Desenvolvedor(a) Front-End React'
 				    meta='Nkey'
+				    onClick={() => goToDetail(1)}
 				    description='Densevolvedor React em Foripa'
 				    extra={"Há 23 Horas"}
 				  >
