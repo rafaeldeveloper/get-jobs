@@ -11,11 +11,11 @@ import { VacancyCard } from './Stylesheet';
 
 export default (props) => {
 
-	const { setOpen, open, listVacanciesQuery, action, goToDetail } = useContainer(props);
+	const { setOpen, open, listVacanciesQuery, action, goToDetail, addVacancy } = useContainer(props);
 
 	return (
 		<Grid columns={1} centered divided>
-			<Modal open={open} setOpen={setOpen} />
+			<Modal open={open} setOpen={setOpen} title={"Adicionar Vaga"} onConfirm={addVacancy} />
 			<Grid.Row>
 				<Grid.Column width={16}>
 					<Menu logo={logo} action={action} />

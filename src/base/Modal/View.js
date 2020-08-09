@@ -1,26 +1,11 @@
 import React from 'react'
 import { Modal, Button, Form } from 'semantic-ui-react';
-import { gql, useMutation } from '@apollo/client';
 
 
-export default ({ open, setOpen }) => {
+export default ({ open, setOpen, title, onConfirm }) => {
 
 
-    const addVacancyMutation = gql`
-		mutation vacancies($name: String!, $company: String!, $salary: String!, $place: String!, $description: String!  ) {
-			vacancies(name: $name, company: $company, salary: $salary, place : $place, description: $description  ) {
-				id
-				name
-			}
-		}
-	`
-
-
-
-    const [mutateVacancy,] = useMutation(addVacancyMutation);
-
-
-    let vacancy = {
+    let defaultVacancy = {
         name: '',
         company: '',
         salary: '',
@@ -28,26 +13,15 @@ export default ({ open, setOpen }) => {
         description: ''
     };
 
-    const addVacancy = () => {
-
-
-
-        mutateVacancy({ variables: { ...vacancy } });
-
-        setOpen(false);
-
-    }
-
-
+    const [vacancy, setVacancy] = React.useState(defaultVacancy)
 
 
     const addProperty = (e, property) => {
 
         vacancy[property] = e.target.value;
+        setVacancy({ ...vacancy });
 
     }
-
-
 
 
 
@@ -58,19 +32,21 @@ export default ({ open, setOpen }) => {
             onOpen={() => setOpen(true)}
             open={open}
         >
-            <Modal.Header>Adicionar Vaga</Modal.Header>
+            <Modal.Header>{title}</Modal.Header>
             <Modal.Content>
                 <Form>
                     <Form.Field>
                         <label>Nome da Vaga</label>
                         <input
                             placeholder='React developer'
+                            value={vacancy?.name}
                             onChange={(e) => addProperty(e, 'name')}
                         />
                     </Form.Field>
                     <Form.Field>
                         <label>Empresa</label>
                         <input
+                            value={vacancy?.company}
                             placeholder='Nkey'
                             onChange={(e) => addProperty(e, 'company')}
 
@@ -79,6 +55,7 @@ export default ({ open, setOpen }) => {
                     <Form.Field>
                         <label>Salario</label>
                         <input
+                            value={vacancy?.salary}
                             placeholder='3.0000'
                             onChange={(e) => addProperty(e, 'salary')}
                         />
@@ -86,22 +63,23 @@ export default ({ open, setOpen }) => {
                     <Form.Field>
                         <label>Local</label>
                         <input
+                            value={vacancy?.place}
                             placeholder='Remoto'
                             onChange={(e) => addProperty(e, 'place')}
                         />
                     </Form.Field>
-                    <Form.TextArea label='Descrição da vaga' placeholder='Desensolvedor react em Fortaleza' onChange={(e) => addProperty(e, 'description')} />
+                    <Form.TextArea value={vacancy?.description} label='Descrição da vaga' placeholder='Desensolvedor react em Fortaleza' onChange={(e) => addProperty(e, 'description')} />
                 </Form>
             </Modal.Content>
             <Modal.Actions>
                 <Button color='black' onClick={() => setOpen(false)}>
                     Cancelar
-        </Button>
+                </Button>
                 <Button
                     content="Salvar"
                     labelPosition='right'
                     icon='checkmark'
-                    onClick={() => addVacancy()}
+                    onClick={() => onConfirm(vacancy)}
                     positive
                 />
             </Modal.Actions>

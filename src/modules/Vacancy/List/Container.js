@@ -1,5 +1,5 @@
 import React from 'react'
-import { gql } from '@apollo/client';
+import { gql, useMutation } from '@apollo/client';
 
 
 const useContainer = () => {
@@ -8,6 +8,20 @@ const useContainer = () => {
     const [open, setOpen] = React.useState(false);
 
     const goToDetail = (id) => (window.location.href = `detail?id=${id}`);
+
+
+    const addVacancyMutation = gql`
+		mutation vacancies($name: String!, $company: String!, $salary: String!, $place: String!, $description: String!  ) {
+			vacancies(name: $name, company: $company, salary: $salary, place : $place, description: $description  ) {
+				id
+				name
+			}
+		}
+	`
+
+
+
+    const [mutateVacancy,] = useMutation(addVacancyMutation);
 
 
     const listVacanciesQuery = gql`
@@ -31,12 +45,27 @@ const useContainer = () => {
 
 
 
+    const addVacancy = (vacancy) => {
+
+
+
+        mutateVacancy({ variables: { ...vacancy } });
+
+        setOpen(false);
+
+    }
+
+
+
+
+
     return {
         open,
         setOpen,
         listVacanciesQuery,
         action,
-        goToDetail
+        goToDetail,
+        addVacancy
     }
 
 }
