@@ -13,7 +13,7 @@ export default () => {
 
   const [httpLink] = useState(
     createHttpLink({
-      uri: 'http://localhost:4000/graphql',
+      uri: 'https://boiling-anchorage-64181.herokuapp.com/graphql',
       headers: {
         "authType": "no-auth",
       }
