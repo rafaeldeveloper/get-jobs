@@ -4,8 +4,10 @@ import GraphqlDataProvider from 'base/GraphqlDataProvider';
 import VacancyList from 'base/Iterator';
 import Modal from 'base/Modal';
 import Menu from 'base/Menu';
+import FloatedActions from 'base/FloatedActions';
+import ExtraInfo from 'base/ExtraInfo';
 import useContainer from './Container';
-import { Card, Grid, Icon, Button, Confirm } from 'semantic-ui-react';
+import { Card, Grid, Confirm } from 'semantic-ui-react';
 import { ImageFloated } from './Stylesheet';
 
 
@@ -20,8 +22,7 @@ export default (props) => {
 		setOpen,
 		updateVacancy,
 		deleteVacancy,
-		setVacancyToDelete,
-		setVacancyToEdit
+		actions,
 
 	} = useContainer(props);
 
@@ -41,24 +42,12 @@ export default (props) => {
 							itemsPerRow={1}
 							item={(data) =>
 								<Card>
-									{
-										data &&
-										<Button.Group>
-											<Button icon onClick={() => setVacancyToEdit(data)}>
-												<Icon name='pencil' />
-											</Button>
-											<Button icon onClick={() => setVacancyToDelete(data)}>
-												<Icon name='x' />
-											</Button>
-										</Button.Group>
-									}
-
 									<Confirm
 										open={deleteOpen}
 										onCancel={() => setDeleteOpen(false)}
 										onConfirm={() => deleteVacancy(data)}
 									/>
-
+									<FloatedActions data={data} actions={actions} />
 									<ImageFloated src={logo} wrapped ui={false} style={{ width: "25%" }} />
 									<Card.Content>
 										<Card.Header>{data?.name}</Card.Header>
@@ -68,12 +57,7 @@ export default (props) => {
 										<Card.Description>
 											{data?.description}
 										</Card.Description>
-										<span>
-											Local : {data?.place || "Não Informado"}
-										</span><br />
-										<span>
-											Salario: {data?.salary || "Não Informado"}
-										</span>
+										<ExtraInfo data={data} />
 									</Card.Content>
 								</Card>
 
