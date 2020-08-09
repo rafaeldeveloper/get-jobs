@@ -2,7 +2,7 @@ import React from 'react';
 import { Card as CardSemantic } from 'semantic-ui-react';
 import  Loading from 'base/Loading';
 
-export default ({ item, refetch, data, itemsPerRow = 2 }) => {
+export default ({ item, refetch, data, ...extraProps }) => {
 
 
     refetch();
@@ -10,7 +10,7 @@ export default ({ item, refetch, data, itemsPerRow = 2 }) => {
     return (
 
         data ?
-            <CardSemantic.Group itemsPerRow={itemsPerRow}>
+            <CardSemantic.Group {...extraProps}>
                 {
                     data?.map(dataProps => {
 

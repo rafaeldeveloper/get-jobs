@@ -152,10 +152,9 @@ export default () => {
 			</Grid.Column>
 		</Grid.Row>
 		<Grid.Row>
-			<Grid.Column width={8} centered>
+			<Grid.Column width={12} centered>
 				<GraphqlDataProvider query={listVacanciesQuery} adapter={(data) => data?.vacancies}>
 					<VacancyList
-						itemsPerRow={4}
 						item={(data) =>
 							<VacancyCard
 								style={{ cursor: 'pointer' }}
