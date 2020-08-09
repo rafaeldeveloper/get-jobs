@@ -1,10 +1,12 @@
-import Vacancy from 'modules/Vacancy/List';
-import Detail from 'modules/Vacancy/Detail';
+import Vacancy from 'modules/Vacancy';
 
+
+export {
+    Vacancy
+};
 
 const Private = {
-    Vacancy,
-    Detail
+    Vacancy
 };
 
 

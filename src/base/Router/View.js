@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
-import { Loading } from 'base';
+import Loading  from 'base/Loading';
 import useContainer from './Container';
-import { useRoutes } from 'hookrouter';
+import { useRoutes, useRedirect } from 'hookrouter';
 
 
 const AppRouter = () => {
@@ -12,6 +12,8 @@ const AppRouter = () => {
     const routes = getRoutes();
 
     const routeResult = useRoutes(routes);
+    useRedirect('/', '/vacancy/list');
+
 
 
     return <Suspense fallback={<Loading />}>{routeResult}</Suspense>;

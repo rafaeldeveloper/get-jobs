@@ -10,9 +10,7 @@ const useContainer = () => {
     const getRouteNameByModule = (str) => str.replace(/(?:^|\.?)([A-Z])/g, function (x, y) { return `-${y.toLowerCase()}` }).replace(/^-/, "");
 
     const getRoutes = () => {
-
-
-
+        
         Object.entries(Modules.Private).map(([key, mod]) => {
             const Module = mod;
             const route = getRouteNameByModule(key);
