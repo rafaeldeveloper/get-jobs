@@ -14,6 +14,7 @@ import { ImageFloated } from './Stylesheet';
 export default (props) => {
 
 	const {
+		vacancy,
 		setDeleteOpen,
 		id,
 		listVacancy,
@@ -29,7 +30,7 @@ export default (props) => {
 
 	return (
 		<Grid columns={1} centered divided>
-			<Modal open={open} setOpen={setOpen} title={"Editar Vaga"} onConfirm={updateVacancy} />
+			<Modal open={open} setOpen={setOpen} title={"Editar Vaga"} onConfirm={updateVacancy} resource={vacancy} />
 			<Grid.Row>
 				<Grid.Column width={16}>
 					<Menu logo={logo} />
@@ -45,7 +46,7 @@ export default (props) => {
 									<Confirm
 										open={deleteOpen}
 										onCancel={() => setDeleteOpen(false)}
-										onConfirm={() => deleteVacancy(data)}
+										onConfirm={() => deleteVacancy()}
 									/>
 									<FloatedActions data={data} actions={actions} />
 									<ImageFloated src={logo} wrapped ui={false} style={{ width: "25%" }} />

@@ -87,9 +87,9 @@ const useContainer = () => {
 
     }
 
-    const updateVacancy = () => {
+    const updateVacancy = (updateVacancy) => {
 
-        mutateUpdateVacancy({ variables: { ...vacancy } });
+        mutateUpdateVacancy({ variables: { ...updateVacancy } });
         cogoToast.success(`Vacancy '#${vacancy.id}' updated with success`);
         setOpen(false);
 
@@ -109,6 +109,7 @@ const useContainer = () => {
 
 
     return {
+        vacancy,
         actions,
         setDeleteOpen,
         listVacancy,

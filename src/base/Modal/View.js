@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Modal, Button, Form } from 'semantic-ui-react';
 
 
-export default ({ open, setOpen, title, onConfirm }) => {
+export default ({ resource, open, setOpen, title, onConfirm }) => {
 
 
     let defaultVacancy = {
@@ -13,8 +13,19 @@ export default ({ open, setOpen, title, onConfirm }) => {
         description: ''
     };
 
-    const [vacancy, setVacancy] = React.useState(defaultVacancy)
+    const [vacancy, setVacancy] = React.useState(defaultVacancy);
 
+
+
+
+    useEffect(() => {
+
+        if(resource){
+            setVacancy({ ...resource });
+
+        }
+
+    }, [resource]);
 
     const addProperty = (e, property) => {
 
