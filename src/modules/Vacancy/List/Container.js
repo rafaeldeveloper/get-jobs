@@ -1,5 +1,6 @@
 import React from 'react'
 import { gql, useMutation } from '@apollo/client';
+import cogoToast from 'cogo-toast';
 
 
 const useContainer = () => {
@@ -47,9 +48,8 @@ const useContainer = () => {
 
     const addVacancy = (vacancy) => {
 
-
-
         mutateVacancy({ variables: { ...vacancy } });
+        cogoToast.success(`Vacancy '${vacancy.name}' added with success,`);
 
         setOpen(false);
 

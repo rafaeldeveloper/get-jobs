@@ -1,15 +1,15 @@
 import React from 'react'
-import { Card, Grid, Icon, Button, Image, Confirm } from 'semantic-ui-react';
 import logo from 'nkey.jpg'
 import GraphqlDataProvider from 'base/GraphqlDataProvider';
 import VacancyList from 'base/Iterator';
 import Modal from 'base/Modal';
 import Menu from 'base/Menu';
 import useContainer from './Container';
+import { Card, Grid, Icon, Button, Confirm } from 'semantic-ui-react';
+import { ImageFloated } from './Stylesheet';
 
 
 export default (props) => {
-
 
 	const {
 		setDeleteOpen,
@@ -59,7 +59,7 @@ export default (props) => {
 										onConfirm={() => deleteVacancy(data)}
 									/>
 
-									<Image src={logo} wrapped ui={false} style={{ width: "25%" }} />
+									<ImageFloated src={logo} wrapped ui={false} style={{ width: "25%" }} />
 									<Card.Content>
 										<Card.Header>{data?.name}</Card.Header>
 										<Card.Meta>
