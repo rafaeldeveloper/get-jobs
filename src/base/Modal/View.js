@@ -1,40 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Modal, Button, Form } from 'semantic-ui-react';
+import useContainer from './Container';
 
 
-export default ({ resource, open, setOpen, title, onConfirm }) => {
+export default ({ open, setOpen, title, onConfirm, ...extraProps }) => {
 
 
-    let defaultVacancy = {
-        name: '',
-        company: '',
-        salary: '',
-        place: '',
-        description: ''
-    };
-
-    const [vacancy, setVacancy] = React.useState(defaultVacancy);
-
-
-
-
-    useEffect(() => {
-
-        if(resource){
-            setVacancy({ ...resource });
-
-        }
-
-    }, [resource]);
-
-    const addProperty = (e, property) => {
-
-        vacancy[property] = e.target.value;
-        setVacancy({ ...vacancy });
-
-    }
-
-
+    const { vacancy, addProperty } = useContainer(extraProps);
 
 
     return (

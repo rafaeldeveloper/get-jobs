@@ -46,7 +46,7 @@ export default (props) => {
 									<Confirm
 										open={deleteOpen}
 										onCancel={() => setDeleteOpen(false)}
-										onConfirm={() => deleteVacancy()}
+										onConfirm={() => deleteVacancy(data)}
 									/>
 									<FloatedActions data={data} actions={actions} />
 									<ImageFloated src={logo} wrapped ui={false} style={{ width: "25%" }} />

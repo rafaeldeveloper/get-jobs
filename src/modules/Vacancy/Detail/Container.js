@@ -79,6 +79,7 @@ const useContainer = () => {
 
 
         } catch (error) {
+            console.log(error, "error");
             cogoToast.error('Fail on delete Vacancy!');
             setDeleteOpen(false);
 
