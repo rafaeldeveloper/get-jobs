@@ -1,14 +1,14 @@
 import React from 'react';
-import Loading from 'components/Loading';
+import Menu from 'base/Menu';
 import renderer from 'react-test-renderer';
 
 
 
 
-test('Loading renders correctly', () => {
+test('Menu renders correctly', () => {
 
     const component = renderer.create(
-        <Loading/>
+        <Menu/>
     );
 
     let tree = component.toJSON();

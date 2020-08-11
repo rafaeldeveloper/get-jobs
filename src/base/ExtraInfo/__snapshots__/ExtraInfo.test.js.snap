@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExtraInfo renders correctly 1`] = `
+Array [
+  <span>
+    Local : 
+    Não Informado
+  </span>,
+  <br />,
+  <span>
+    Salario: 
+    Não Informado
+  </span>,
+]
+`;

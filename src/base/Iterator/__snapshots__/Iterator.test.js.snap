@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Iterator renders correctly 1`] = `
+<div
+  className="ui active transition visible dimmer"
+  onClick={[Function]}
+>
+  <div
+    className="content"
+  >
+    <div
+      className="ui medium inverted text loader"
+    >
+      Loading
+    </div>
+  </div>
+</div>
+`;

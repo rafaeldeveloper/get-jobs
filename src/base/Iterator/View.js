@@ -5,7 +5,7 @@ import  Loading from 'base/Loading';
 export default ({ item, refetch, data, ...extraProps }) => {
 
 
-    refetch();
+    refetch && refetch();
 
     return (
 

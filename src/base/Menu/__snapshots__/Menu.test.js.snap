@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu renders correctly 1`] = `
+<div
+  className="ui stackable menu"
+>
+  <div
+    className="item"
+    onClick={[Function]}
+  >
+    <img
+      alt="logo"
+    />
+  </div>
+  <a
+    className="item"
+    onClick={[Function]}
+  >
+    Vacancies
+  </a>
+</div>
+`;

@@ -1,14 +1,14 @@
 import React from 'react';
-import Loading from 'components/Loading';
+import FloatedActions from 'base/FloatedActions';
 import renderer from 'react-test-renderer';
 
 
 
 
-test('Loading renders correctly', () => {
+test('FloatedActions renders correctly', () => {
 
     const component = renderer.create(
-        <Loading/>
+        <FloatedActions/>
     );
 
     let tree = component.toJSON();

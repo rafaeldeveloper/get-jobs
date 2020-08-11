@@ -1,14 +1,14 @@
 import React from 'react';
-import Modal from 'base/Modal';
+import Iterator from 'base/Iterator';
 import renderer from 'react-test-renderer';
 
 
 
 
-test('Modal renders correctly', () => {
+test('Iterator renders correctly', () => {
 
     const component = renderer.create(
-        <Modal/>
+        <Iterator/>
     );
 
     let tree = component.toJSON();

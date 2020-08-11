@@ -1,14 +1,14 @@
 import React from 'react';
-import Loading from 'components/Loading';
+import ExtraInfo from 'base/ExtraInfo';
 import renderer from 'react-test-renderer';
 
 
 
 
-test('Loading renders correctly', () => {
+test('ExtraInfo renders correctly', () => {
 
     const component = renderer.create(
-        <Loading/>
+        <ExtraInfo/>
     );
 
     let tree = component.toJSON();

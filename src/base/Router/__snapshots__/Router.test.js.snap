@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Router renders correctly 1`] = `
+<div
+  className="ui centered divided one column grid"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="sixteen wide column"
+    >
+      <div
+        className="ui stackable menu"
+      >
+        <div
+          className="item"
+          onClick={[Function]}
+        >
+          <img
+            alt="logo"
+            src="nkey.jpg"
+          />
+        </div>
+        <a
+          className="item"
+          onClick={[Function]}
+        >
+          Vacancies
+        </a>
+        <a
+          className="right item"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="plus icon"
+            onClick={[Function]}
+          />
+          Adicionar Anuncio
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      centered={true}
+      className="twelve wide column"
+    >
+      <div
+        className="ui active transition visible dimmer"
+        onClick={[Function]}
+      >
+        <div
+          className="content"
+        >
+          <div
+            className="ui medium inverted text loader"
+          >
+            Loading
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
