@@ -24,7 +24,10 @@ const InstallPWA = () => {
     promptInstall.prompt();
   };
   if (!supportsPWA) {
+    console.log("aaaaaaa");
     return null;
+  }else{
+    console.log("bbbbbbb")
   }
   return (
     <button
