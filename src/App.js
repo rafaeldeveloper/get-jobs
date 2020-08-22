@@ -1,7 +1,6 @@
 import React from 'react';
 import AppRouter from 'base/Router'
 import './App.css';
-import InstallPWA from './PWA';
 
 
 window.addEventListener('beforeinstallprompt', (e) => {
