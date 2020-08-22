@@ -14,6 +14,21 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  console.log('display-mode is standalone');
+}
+
+window.addEventListener('appinstalled', (evt) => {
+  console.log('a2hs installed');
+});
+
+
+window.addEventListener('appinstalled', (evt) => {
+  // Log install to analytics
+  console.log('INSTALL: Success');
+});
+
+
 function App() {
 
 
