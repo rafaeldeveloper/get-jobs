@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Button} from 'semantic-ui-react';
 
 const InstallPWA = () => {
   const [supportsPWA, setSupportsPWA] = useState(false);
@@ -30,7 +31,7 @@ const InstallPWA = () => {
     console.log("bbbbbbb")
   }
   return (
-    <button
+    <Button
       className="link-button"
       id="setup_button"
       aria-label="Install app"
@@ -38,7 +39,7 @@ const InstallPWA = () => {
       onClick={onClick}
     >
       Install
-    </button>
+    </Button>
   );
 };
 
