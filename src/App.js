@@ -33,7 +33,6 @@ function App() {
 
   return (
   	<div>
-  	 <InstallPWA />
     <AppRouter />
     </div>
   );
